@@ -1,12 +1,24 @@
 # I2CDriver Music Player
-This project plays simply music notes using a buzzer and the I2CDriver from ExCamera Labs. You can find a YouTube video demo here: https://www.youtube.com/embed/oBWIhKuSIXk
+This project plays simply music notes using buzzers and the I2CDriver from ExCamera Labs. You can find a YouTube video demo here: https://www.youtube.com/embed/oBWIhKuSIXk
 
 ![](iicdriver-music.png)
 
 Current supported songs:
 
-- supermario.py: Super Mario theme song
+- supermario.py: the Super Mario Bro. theme song
+- march_of_steel_torrent: the March of Steel Torrent (Chinese: 钢铁洪流进行曲) 
 
-You can extent this code by adding more songs using a separate python script.
+You can extent this code by adding more songs using a separate python script in the /music folder.
+
+
+## Notes on I2CDriver
+
+To speedup I2CDriver, use setserial to change the USB port speed:
+
+```
+$ setserial /dev/ttyUSB0 low_latency
+```
+
+This sets the USB latency to its minimal 1ms and can increase the speed of two-way traffic by up to 10X.
 
 To find more about I2CDriver: https://i2cdriver.com/
