@@ -2,6 +2,8 @@
 
 import time
 from i2cdriver import I2CDriver
+
+# The following choose which song to play. Only one should be uncommented:
 #from music.supermario import *
 from music.march_of_steel_torrent import *
 
@@ -35,11 +37,11 @@ if __name__ == '__main__':
             if (this_note < 55 or this_note > 127):
                 time.sleep(this_tempo / 1000.0)
             else:
-                # flash the LED
+                # flash the RGB LED
                 intensity = int(map_value(this_note, 55, 127, 1, 256))
                 fade = 10
                 i2c.start(0x08, 0)
-                # [0x00, R, G, B, fade]
+                # parameters: [0x00, R, G, B, fade]
                 i2c.write([0x00, intensity, intensity, intensity, fade])
                 i2c.stop()
 

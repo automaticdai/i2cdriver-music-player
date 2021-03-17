@@ -1,29 +1,35 @@
 # I2CDriver Music Player
 
-This project plays simply music notes using buzzers and the I2CDriver from ExCamera Labs. It supports play two tracks simultaneously. You can find a YouTube video demo here: https://www.youtube.com/embed/oBWIhKuSIXk
+This project plays simply music notes using buzzers and the I2CDriver. It supports play two tracks simultaneously. You can find a video demo here: https://www.bilibili.com/video/bv1uE411u7Ju
 
 ![](iicdriver-music.png)
 
 Current supported songs:
 
-- supermario.py: the Super Mario Bro. theme song
-- march_of_steel_torrent.py: the March of Steel Torrent (Chinese: 钢铁洪流进行曲)
+- `music/supermario.py`: Super Mario Bro. theme song
+- `music/march_of_steel_torrent.py`: March of Steel Torrent (Chinese name: 钢铁洪流进行曲)
 
-You can extent this code by adding more songs using a separate python script in the /music folder.
+To switch the songs, change the first few lines in the `main.py`. You can extent this code by adding more songs using a separate python script in the `/music` folder.
+
+The buzzers extension board is from: https://electricdollarstore.com, which has a on-board microncontroller with I2C interface.
+
+The I2CDriver is a usb-to-I2C bridge and debugger from ExCamera Labs (https://i2cdriver.com/).
+
+## How to use
+
+Connect the hardware and then run the following command:`$ python3 main.py`
 
 
 ## Notes on I2CDriver
 
-To speedup I2CDriver, use setserial to change the USB port speed:
+To speedup the I2CDriver, use `setserial` to change the USB port speed:
 
 ```
-$ setserial /dev/ttyUSB0 low_latency
+$ sudo setserial /dev/ttyUSB0 low_latency
 ```
 
-This sets the USB latency to its minimal 1ms and can increase the speed of two-way traffic by up to 10X.
-
-To find more about I2CDriver: https://i2cdriver.com/
+This sets the USB latency to its minimal (1 ms) and can increase the speed of two-way communication by up to 10x.
 
 
 ## Limitation
-The two tracks are not totally separated, and they can only use same tempos. Hence the second track is only ideal for playing chords.
+The two tracks are not totally separated and independent, as they can only use same tempos. Hence the second track is only ideal for playing chords.
