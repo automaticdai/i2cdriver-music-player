@@ -1,6 +1,7 @@
 # I2CDriver Music Player
 
-This project plays simply music notes using buzzers and the I2CDriver. It supports play two tracks simultaneously. You can find a video demo here: https://www.bilibili.com/video/bv1uE411u7Ju
+This project plays simply music notes using buzzers and the I2CDriver from ExCamera Labs. It supports play two tracks simultaneously. You can find a video demo here: https://www.bilibili.com/video/BV1uE411u7Ju
+
 
 ![](iicdriver-music.png)
 
