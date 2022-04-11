@@ -1,7 +1,6 @@
 # I2CDriver Music Player
 
-This project plays simply music notes using buzzers and the I2CDriver from ExCamera Labs. It supports play two tracks simultaneously. You can find a video demo here: https://www.bilibili.com/video/BV1uE411u7Ju
-
+This project plays simply music notes using buzzers and the I2CDriver from ExCamera Labs. It supports play two tracks simultaneously. 
 
 ![](iicdriver-music.png)
 
@@ -9,6 +8,10 @@ Current supported songs:
 
 - `music/supermario.py`: Super Mario Bro. theme song
 - `music/march_of_steel_torrent.py`: March of Steel Torrent (Chinese name: 钢铁洪流进行曲)
+
+You can find demo video from: 
+- YouTube: https://youtu.be/3MocEkK7n_Y
+- Bilibili: https://www.bilibili.com/video/BV1uE411u7Ju
 
 To switch the songs, change the first few lines in the `main.py`. You can extent this code by adding more songs using a separate python script in the `/music` folder.
 
@@ -34,3 +37,7 @@ This sets the USB latency to its minimal (1 ms) and can increase the speed of tw
 
 ## Limitation
 The two tracks are not totally separated and independent, as they can only use same tempos. Hence the second track is only ideal for playing chords.
+
+
+## License
+MIT License
